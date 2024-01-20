@@ -1,0 +1,2570 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --link-text-blue: #2f80ed;
+  --modal-button-blue: #2d9cdb;
+
+  --skyscraper-blue: #2a87e9;
+  --goldenrod: #f8cd05;
+  --spellingbee-yellow: #f8cd05;
+  --kenken-beige: #ffecd7;
+  --wordmaze-cyan: #008b8b;
+  --cascade-purple: #b383e4;
+  --cascade-purple-light: #d4d0d8;
+  --wordmorph-red: #f14e62;
+  --geometro-blue: #1ca0ff;
+  --bubble-up-teal: #55c1c1;
+  --square-dance-green: #82ce92;
+  --square-dance-peach: #f8aa9e;
+  --word-cross-black: #2a3131;
+  --battleships-blue: #cef6ff;
+  --tiles-indigo: #054499;
+  --jigsaw-brown: #bab1a7;
+  --gravity-golf-green: #5e8154;
+  --birds-blue: #8f608a;
+  --plant-life-orange: #ce751d;
+  --order-of-operations-orange: #ffb500;
+  --operations-orange: #ffb500;
+  --chess-puzzles-green: #29a789;
+  --connections-periwinkle: #b3a7ff;
+  --ring-ring-raspberry: #dd4d63;
+}
+
+@-webkit-keyframes cursor-blink {
+  0%		{ border-color: rgba(248, 205, 5, 0); }
+	50%		{ border-color: rgba(248, 205, 5, 0); }
+  100%	{ border-color: rgba(248, 205, 5, 1); }
+}
+
+@keyframes cursor-blink {
+  0%		{ border-color: rgba(248, 205, 5, 0); }
+	50%		{ border-color: rgba(248, 205, 5, 0); }
+  100%	{ border-color: rgba(248, 205, 5, 1); }
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(1);
+						transform: scale(1);
+	}
+	50% {
+		-webkit-transform: scale(1.3);
+						transform: scale(1.3);
+						z-index: 10;
+	}
+	100% {
+		-webkit-transform: scale(1);
+						transform: scale(1);
+	}
+}
+
+@keyframes pulse {
+	0% {
+		-webkit-transform: scale(1);
+						transform: scale(1);
+	}
+	50% {
+		-webkit-transform: scale(1.3);
+						transform: scale(1.3);
+						z-index: 10;
+	}
+	100% {
+		-webkit-transform: scale(1);
+						transform: scale(1);
+	}
+}
+
+@-webkit-keyframes blink {
+	to { opacity: 1; }
+}
+
+@keyframes blink {
+	to { opacity: 1; }
+}
+
+@-webkit-keyframes blink-red {
+	50% { color: black; }
+	70% { color: #f74d31; }
+	80% { color: black; }
+	100% { color: #f74d31; }
+}
+
+@keyframes blink-red {
+	50% { color: black; }
+	70% { color: #f74d31; }
+	80% { color: black; }
+	100% { color: #f74d31; }
+}
+
+@-webkit-keyframes fill-bar {
+	to { width: 100%; }
+}
+
+@keyframes fill-bar {
+	to { width: 100%; }
+}
+
+@-webkit-keyframes show-then-hide {
+	from { top: 5px; opacity: 1; }
+	to { top: -5px; opacity: 0; }
+}
+
+@keyframes show-then-hide {
+	from { top: 5px; opacity: 1; }
+	to { top: -5px; opacity: 0; }
+}
+
+@-webkit-keyframes bounce {
+	0% {
+	opacity: 0.4;
+	-webkit-transform: translateY(0.1em);
+	        transform: translateY(0.1em);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(-0.4em);
+		        transform: translateY(-0.4em);
+	}
+}
+
+@keyframes bounce {
+	0% {
+	opacity: 0.4;
+	-webkit-transform: translateY(0.1em);
+	        transform: translateY(0.1em);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(-0.4em);
+		        transform: translateY(-0.4em);
+	}
+}
+
+@-webkit-keyframes swipe-to-start {
+	to {
+		margin-top: -400vh;
+	}
+}
+
+@keyframes swipe-to-start {
+	to {
+		margin-top: -400vh;
+	}
+}
+
+@font-face {
+  font-family: 'NYTMagSans';
+  src: url('../fonts/magsans-normal-500.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'NYTMagSans';
+  src: url('../fonts/magsans-normal-700.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'NYTFranklinLight';
+  src: url('../fonts/NYTFranklinLight.otf');
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('../fonts/NYTFranklinMedium.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('../fonts/franklin-normal-600.woff2') format('woff2'),
+    url('../fonts/franklin-normal-600.woff') format('woff');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('../fonts/NYTFranklinBold.otf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'NYTFranklin';
+  src: url('../fonts/NYTFranklinExtraBold.otf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'NYTStymie';
+  src: url('../fonts/NYTStymieTextExtraBold.otf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'karnak-bold-condensed';
+  src: url('../fonts/NYTKarnakCondensed-Bold.otf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'karnakCondensedBold';
+  src: url('../fonts/NYTKarnakCondensed-Bold.otf');
+}
+
+@font-face {
+  font-family: 'karnakMedium';
+  src: url('../fonts/NYTKarnak-Medium.otf');
+}
+
+@font-face {
+  font-family: 'nytFranklinMedium';
+  src: url('../fonts/NYTFranklinMedium.otf');
+  font-weight: 500;
+}
+
+/* !!DEPRECATED!!
+The fonts below are kept for backwards compatibility but don't use them in future projects */
+
+@font-face {
+  font-family: magsans;
+  src: url('../fonts/magsans-normal-500.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: magsans-bold;
+  src: url('../fonts/magsans-normal-700.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: franklin-extra-bold;
+  src: url('../fonts/NYTFranklinExtraBold.otf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: magslab;
+  src: url('../fonts/magslab-normal-700.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: karnak;
+  src: url('../fonts/NYTKarnakDisplay.otf');
+  font-weight: 700;
+}
+
+/* end deprecated section */
+
+header {
+  height: var(--header-height);
+  min-height: var(--header-height);
+  background-color: white;
+  border-bottom: 1px solid #e6e6e6;
+  color: white;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.5em;
+  height: 30px;
+  color: black;
+  font-family: 'nyt-karnakcondensed';
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+header .tools {
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+header .tools * {
+  color: var(--link-text-blue);
+  cursor: pointer;
+  font: 1em 'NYT=Franklin';
+  margin-left: 10px;
+}
+header button {
+  background: white;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+header button:disabled {
+  color: gray;
+  cursor: default;
+}
+
+#concierge {
+  background-color: var(--teal);
+  display: block;
+  font-family: magsans;
+  height: 400vh;
+  width: 100%;
+}
+
+#concierge.swipe {
+  -webkit-animation: swipe-to-start 1s 1 ease;
+  animation: swipe-to-start 1s 1 ease;
+}
+
+#welcome {
+  pointer-events: none;
+  color: white;
+  height: 100vh;
+  padding: 1.5em;
+  width: 100%;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+#welcome > div {
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+#welcome h1 {
+  font-family: 'nyt-karnakcondensed';
+  font-size: 3em;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#welcome p,
+#welcome ul,
+#welcome li,
+#help-modal ul,
+#help-modal li {
+  font-size: 1em;
+  line-height: 1.3;
+}
+
+#welcome p {
+  margin-top: 20px;
+}
+
+#welcome ul {
+  font-size: 1rem;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+#welcome li ~ li {
+  margin-top: 4px;
+}
+
+#welcome a:first-of-type {
+  margin-top: 35px;
+}
+
+.arrow {
+  height: 27px;
+  width: 17px;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTciIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAxNyAxNyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMyIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48cGF0aCBkPSJNOC41IDMuNXYxMiIgc3Ryb2tlLWxpbmVjYXA9InNxdWFyZSIvPjxwYXRoIGQ9Ik0xIDlsNy41LTYuODE2TDE2IDkiLz48L2c+PC9zdmc+);
+  background-repeat: no-repeat;
+  margin: 15px auto 0 auto;
+}
+
+.bounce {
+  -webkit-animation: bounce 1s infinite alternate ease;
+  animation: bounce 1s infinite alternate ease;
+}
+
+main {
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  #concierge {
+    display: none;
+  }
+}
+
+main.obscured {
+  filter: blur(5px);
+}
+
+.page.obscured {
+  filter: blur(5px);
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.modal .modal-content {
+  -webkit-box-shadow: 0 3px 12px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 12px -1px rgba(0, 0, 0, 0.3);
+  padding: 1.5em 1em;
+  position: relative;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 500px;
+  text-align: center;
+  width: 86%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.close-x {
+  color: black;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 24px;
+  height: 24px;
+  background: center/24px 24px no-repeat;
+  background-image: url('https://www.nytimes.com/games-assets/v2/assets/icon-close.svg');
+}
+
+@media screen and (max-width: 500px) {
+  #close-congrats {
+    top: 8%;
+    right: 2%;
+  }
+}
+
+.modal h1 {
+  font-family: 'nyt-karnakcondensed';
+  font-size: 2em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.modal .oblong-button {
+  background-color: var(--goldenrod);
+  display: block;
+  font-size: 1.5em;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 0.4em 1em;
+  text-align: center;
+  width: 100%;
+}
+
+.modal p {
+  color: black;
+  margin: 10px 0;
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: center;
+}
+.modal p span {
+  font-size: 1em;
+}
+
+.modal .score {
+  font-size: 2em;
+  line-height: 1;
+}
+
+.modal hr {
+  height: 3px;
+  width: 40px;
+  background-color: #333;
+  border: none;
+  margin: 10px 0;
+}
+
+.modal a {
+  color: #333;
+  border-bottom: 3px solid var(--goldenrod);
+}
+
+.modal-content ul {
+  padding: 0 1em;
+  text-align: left;
+}
+
+.modal-content h2 {
+  font-family: 'nyt-karnakcondensed';
+}
+
+.pressable {
+  margin-top: 0;
+  -webkit-box-shadow: 0 4px 0 0 #ccc;
+  box-shadow: 0 4px 0 0 #ccc;
+}
+
+.pressable:active,
+.gold.pressable:active {
+  -webkit-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+  position: relative;
+  top: 4px;
+}
+
+.modal button {
+  background: none repeat scroll 0 0 transparent;
+  border: medium none;
+  border-spacing: 0;
+  color: #26589f;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.42rem;
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+}
+
+.modal button:focus {
+  outline: 0;
+}
+
+.modal button[disabled='disabled'],
+.modal button:disabled {
+  background-color: #f2f2f2 !important;
+  color: #999 !important;
+  -webkit-box-shadow: 0 0 0 0 !important;
+  box-shadow: 0 0 0 0 !important;
+  top: 4px !important;
+}
+
+.oblong-button {
+  background-color: white;
+  border-radius: 30px;
+  color: black;
+  font-family: magslab;
+  font-size: 2em;
+  height: 50px;
+  letter-spacing: 0.5px;
+  padding: 0.4em 1.7em;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.gold.pressable {
+  background-color: var(--goldenrod);
+  -webkit-box-shadow: 0 4px 0 0 #e0b70a;
+  box-shadow: 0 4px 0 0 #e0b70a;
+}
+
+#alert-modal {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.bold {
+  font-family: magsans-bold;
+}
+
+.modal-subtitle {
+  font-weight: bold;
+}
+
+:root {
+  --toolbar-desktop-height: 65px;
+  --toolbar-mobile-height: 46px;
+}
+
+#hamburger {
+  width: 20px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  display: block;
+}
+
+#hamburger::before {
+  content: '';
+  width: 20px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  display: block;
+  top: -7px;
+}
+
+#hamburger::after {
+  width: 20px;
+  height: 3px;
+  background-color: #000;
+  border-radius: 4px;
+  position: absolute;
+  display: block;
+  content: '';
+  bottom: -7px;
+}
+
+#nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  height: 45px;
+  min-width: 45px;
+}
+
+.nav-menu-container {
+  display: flex;
+  justify-content: left;
+  align-items: unset;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#nav-menu-content-container {
+  display: block;
+}
+
+.nav-collapsed,
+.nav-collapsed * {
+  display: none;
+  z-index: 0;
+}
+
+#nav-menu-content {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: white;
+  color: black;
+  overflow-y: auto;
+  animation: SlideInMenu 100ms linear;
+  max-width: 375px;
+  box-sizing: border-box;
+  width: 100%;
+  box-shadow: 3px 5px 5px rgba(0, 0, 0, 0.15);
+  max-height: calc(100% - var(--toolbar-mobile-height) - 1px);
+  margin-top: calc(var(--toolbar-mobile-height) + 1px);
+  padding: 0px;
+}
+
+#nav-menu-content.closing {
+  animation: SlideOutMenu 100ms linear;
+}
+
+#nav-header {
+  padding: 18px 0 0 18px;
+}
+
+.nav-more-text {
+  font-family: 'NYT-Franklin';
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 12px;
+  margin: 32px 0px 24px 0px;
+  padding-left: 18px;
+}
+
+#nav-game-list,
+#nav-nyt-list {
+  list-style: none;
+  color: black;
+  padding: unset;
+  margin: unset;
+}
+
+#nav-nyt-list {
+  margin-top: 5px;
+  padding: 12px 0px;
+  border-top: 1px solid #dcdcdc;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  height: 40px;
+  font-family: 'NYT-Franklin';
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  padding-left: 18px;
+}
+
+.nav-item:hover {
+  background-color: #f4f4f4;
+}
+
+.nav-item-icon {
+  padding-bottom: 2px;
+  content: '';
+  height: 20px;
+  width: 28px;
+  padding-right: 8px;
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+
+.icon-sb {
+  background-image: url('https://www.nytimes.com/games-assets/v2/assets/spelling-bee.svg');
+  background-size: 20px;
+}
+
+.icon-daily {
+  background-image: url('../../shared/icons/daily.svg');
+  background-size: 20px;
+}
+
+.icon-mini {
+  background-image: url('../../shared/icons/mini.svg');
+  background-size: 20px;
+}
+
+.icon-wordle {
+  background-image: url('../../shared/icons/wordle.svg');
+  background-size: 20px;
+}
+
+.icon-digits {
+  background-image: url('../../shared/icons/digits.svg');
+  background-size: 20px;
+}
+
+.icon-connections {
+  background-image: url('../../shared/icons/connections.svg');
+  background-size: 20px;
+}
+
+.icon-nyt {
+  background-image: url('../../shared/icons/nyt-backgrounded.svg');
+  background-size: 20px;
+}
+
+.icon-cooking {
+  background-image: url('../../shared/icons/cooking-backgrounded.svg');
+  background-size: 20px;
+}
+
+.icon-wirecutter {
+  background-image: url('../../shared/icons/wirecutter-backgrounded.svg');
+  background-size: 20px;
+}
+
+.icon-athletic {
+  background-image: url('../../shared/icons/athletic-backgrounded.svg');
+  background-size: 20px;
+}
+
+.beta-pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 15px;
+  border-radius: 13px;
+  background-color: #4f85e5;
+  color: white;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  margin-left: 1em;
+}
+
+#nav-privacy {
+  letter-spacing: 0.5px;
+  font-family: 'NYT-Franklin';
+  font-weight: 500;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0px 25px 0px 17px;
+  padding: 12px 0px;
+  border-top: 1px solid #dcdcdc;
+  color: black;
+  font-size: 15px;
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#nav-privacy > a,
+#nav-game-list > a,
+#nav-nyt-list > a {
+  text-decoration: none;
+  color: black;
+}
+
+#logo-nav,
+#title-bar {
+  display: none;
+}
+
+#nav.toolbar-nav {
+  display: flex;
+}
+
+.nav-logo {
+  height: 26px;
+  width: 148px;
+}
+
+.nav-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  flex: 3 2 auto;
+  transition: all 225ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-delay: 50ms;
+  transform: scale(1), translateY(0);
+  opacity: 1;
+  height: 100%;
+}
+
+/* .title-bar-date {
+  font-family: NYTFranklinLight;
+  display: inline-block;
+  font-size: 28px;
+  font-weight: 300;
+  vertical-align: baseline;
+} */
+
+/* Webview layout in apps */
+.pz-newsreader #logo-nav,
+.pz-newsreader #nav.toolbar-nav,
+.pz-games-app #logo-nav,
+.pz-games-app #nav.toolbar-nav {
+  display: none;
+}
+
+/* desktop */
+@media screen and (min-width: 768px) and (min-height: 600px) {
+  #logo-nav {
+    display: flex;
+  }
+
+  #logo-nav > #nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    height: 65px;
+    min-width: 65px;
+  }
+
+  #nav-header {
+    display: none;
+  }
+
+  #nav-menu-content {
+    max-height: calc(100% - var(--toolbar-desktop-height) - 1px);
+    margin-top: calc(var(--toolbar-desktop-height) + 1px);
+  }
+
+  .nav-more-text {
+    margin: 18px 0px 24px 0px;
+  }
+
+  #nav.toolbar-nav {
+    display: none;
+  }
+}
+
+@keyframes SlideInMenu {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes SlideOutMenu {
+  0% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+}
+
+:root {
+  --toolbar-desktop-height: 65px;
+  --toolbar-mobile-height: 46px;
+}
+
+#toolbar {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid var(--light-grey);
+}
+
+.title-bar-wrapper {
+  padding: 0;
+  border: 0;
+  flex: 1 1 auto;
+  margin: 12px 12px 0px 12px;
+  display: block;
+}
+
+.title-bar-game {
+  font-family: 'nyt-karnakcondensed';
+  font-size: 42px;
+  font-weight: bold;
+  margin-right: 16px;
+}
+
+.toolbar-container {
+  font: 15px 'NYT-Franklin';
+  font-weight: 700;
+  vertical-align: baseline;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.toolbar-content {
+  vertical-align: baseline;
+  display: flex;
+  flex-wrap: nowrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-right: 12px;
+}
+
+.toolbar-button {
+  padding: 12px 8px 12px;
+  border: none;
+  font-size: 1.125em;
+  color: black;
+}
+
+.toolbar-left {
+  display: flex;
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.toolbar-center {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.toolbar-right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.help-icon,
+.settings-icon {
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: contain;
+}
+
+.help-icon {
+  background-image: url('https://www.nytimes.com/games-assets/v2/assets/icons/help.svg');
+}
+
+.settings-icon {
+  background-image: url('https://www.nytimes.com/games-assets/v2/assets/icons/settings.svg');
+}
+
+button {
+  background: transparent;
+  border: none;
+}
+
+/* show toolbar nav */
+#toolbar > #nav {
+  display: flex;
+}
+
+/* desktop */
+@media screen and (min-width: 768px) and (min-height: 600px) {
+  /* show logo nav */
+  #logo-nav {
+    display: flex;
+  }
+
+  #logo-nav {
+    vertical-align: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    min-height: 1px;
+    flex: 1 1 0%;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--light-grey);
+    align-items: center;
+  }
+
+  #title-bar {
+    vertical-align: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    min-height: 1px;
+    flex: 1 1 0%;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 24px 12px;
+  }
+
+  #toolbar {
+    border-top: 1px solid var(--light-grey);
+  }
+
+  .toolbar-button {
+    line-height: 45px;
+    padding: 6px 6px 4px;
+  }
+
+  .toolbar-container {
+    padding: 0 12px;
+  }
+
+  .toolbar-content {
+    padding: unset;
+  }
+
+  .settings-icon,
+  .help-icon {
+    pointer-events: none;
+  }
+
+  #toolbar > #nav {
+    display: none;
+  }
+}
+
+
+
+/* animations */
+.invalid-shake {
+  animation: shake ease-in 0.2s 1.5;
+}
+
+.solved-pulse {
+  animation: pulse linear 0.3s 1;
+  animation-fill-mode: forwards;
+}
+
+.short-bounce {
+  animation: bounce ease-in 0.3s 1;
+  animation-fill-mode: forwards;
+}
+
+.short-down-bounce {
+  animation: downBounceText ease-in 0.4s 1;
+  animation-fill-mode: forwards;
+}
+
+.pop {
+  animation: pop ease-in 0.4s 1;
+  animation-fill-mode: forwards;
+}
+
+.fade {
+  animation: fadeoutandshorten ease-in 0.4s 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translatex(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleY(1) scaleX(1);
+    z-index: 4;
+  }
+  40% {
+    transform: scaleY(1.2) scaleX(1.2);
+  }
+  70% {
+    transform: scaleY(1.2) scaleX(1.2);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+    z-index: 4;
+  }
+}
+
+@keyframes pulsestartsmallstaybig {
+  0% {
+    transform: scaleY(0.7) scaleX(0.7);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeoutandshorten {
+  from {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes downBounceText {
+  0%,
+  100% {
+    top: 0;
+  }
+
+  50% {
+    top: 10px;
+  }
+}
+
+@keyframes shrink2 {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.7) scaleX(0.7);
+  }
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0deg);
+  }
+  100% {
+    transform: rotateX(180deg);
+  }
+}
+
+@keyframes pop {
+  25% {
+    transform: scale(1.2);
+  }
+  75% {
+    transform: scale(0.4);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+}
+
+/* desktop */
+@media screen and (min-width: 768px) {
+  @keyframes pulse {
+    0% {
+      transform: scaleY(1) scaleX(1);
+      z-index: 4;
+    }
+    40% {
+      transform: scaleY(1.15) scaleX(1.1);
+    }
+    70% {
+      transform: scaleY(1.15) scaleX(1.1);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1);
+      z-index: 4;
+    }
+  }
+}
+
+/* Styling related to the (probably 4 by 4) board, wall, grid--- whatever you want to call it. In other words, NOT styling related to surrounding UI, menus, etc. */
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  position: relative;
+}
+
+.flex-grid * {
+  width: calc(24px + 4 * var(--mobile-item-size));
+  margin: auto;
+}
+
+.flex-grid,
+.flex-grid * {
+  gap: 8px;
+}
+
+.item {
+  width: var(--mobile-item-size);
+  max-width: var(--mobile-max-item-size);
+  min-width: 20px;
+  min-height: 70px;
+  height: 22.5vw;
+  max-height: 22.5vw;
+  font-size: 15px;
+  background-color: var(--item-grey);
+  color: black;
+  outline: none;
+  text-align: center;
+  font-family: 'NYT-Franklin';
+  font-weight: bold;
+  border-radius: 6px;
+  z-index: 0;
+  position: absolute;
+  transition: opacity 0.4s ease;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.item:hover {
+  cursor: pointer;
+}
+
+.item.inactive {
+  pointer-events: none;
+}
+
+#emoji-recap {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.nyt-emoji-row {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+}
+
+.nyt-emoji {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  background-color: black;
+  margin: 2px 0px;
+}
+
+@keyframes textfadein {
+  0% {
+    color: black;
+  }
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: black;
+  }
+}
+
+@keyframes textfadeinwhite {
+  0% {
+    color: white;
+  }
+  0% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes textfadeout {
+  from {
+    color: black;
+  }
+  to {
+    color: transparent;
+  }
+}
+
+@keyframes colorfadeout {
+  from {
+    background-color: var(--selected-color);
+    color: black;
+  }
+  to {
+    background-color: var(--item-grey);
+    color: transparent;
+  }
+}
+
+.item.fadewhite {
+  animation: textfadeinwhite 1s;
+}
+
+.item.fade {
+  animation: textfadein 1s;
+}
+
+.item.fadeout {
+  animation: textfadeout ease-in-out 0.6s 1;
+  animation-fill-mode: forwards;
+}
+
+.item.fadein,
+.answer-banner.fadein {
+  animation: textfadein ease-in-out 0.6s 1;
+  animation-fill-mode: forwards;
+}
+
+.item.selected-color-fadeout {
+  animation: colorfadeout ease-in-out 0.6s 1;
+  animation-fill-mode: forwards;
+}
+
+.flex-col,
+.item,
+#puzzle-buttons {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  min-height: 70px;
+  height: 22.5vw;
+}
+
+#board {
+  width: calc(24px + 4 * var(--mobile-item-size));
+  height: calc(24px + 4 * var(--mobile-item-size));
+  margin: auto;
+}
+
+#canvas {
+  background-color: transparent;
+  position: absolute;
+}
+
+.item.selected {
+  background-color: var(--selected-color);
+  color: white;
+}
+
+.item.correct {
+  outline: none;
+}
+.item.correct.group-0,
+.answer-banner.group-0,
+.nyt-emoji.group-0 {
+  background-color: var(--group-0-color);
+}
+.item.correct.group-1,
+.answer-banner.group-1,
+.nyt-emoji.group-1 {
+  background-color: var(--group-1-color);
+}
+.item.correct.group-2,
+.answer-banner.group-2,
+.nyt-emoji.group-2 {
+  background-color: var(--group-2-color);
+}
+.item.correct.group-3,
+.answer-banner.group-3,
+.nyt-emoji.group-3 {
+  background-color: var(--group-3-color);
+}
+.item.invalid-shake {
+  background-color: var(--incorrect-color);
+}
+
+#attempts-remaining-counter {
+  position: relative;
+}
+
+.answer-banner {
+  width: 100%;
+  z-index: 5;
+  font-size: 16px;
+  background-color: var(--main-game-color);
+  color: black;
+  position: absolute;
+  margin: auto;
+  min-height: 70px;
+  height: var(--mobile-max-item-size);
+  max-height: 22.5vw;
+  text-align: center;
+  gap: 2px;
+  left: 0;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-overflow: wrap;
+}
+
+.growShrink {
+  animation: growShrink ease-in 0.5s 0s 1;
+}
+
+@keyframes growShrink {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(0.9);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
+
+.shrunk {
+  animation: shrink ease-in 0.5s 0s 1;
+  animation-fill-mode: forwards;
+}
+
+.item-row-0 {
+  top: 0;
+}
+.item-col-0 {
+  left: 0;
+}
+.item-row-1 {
+  top: calc(8px + var(--mobile-item-size));
+}
+.item-col-1 {
+  left: calc(8px + var(--mobile-item-size));
+}
+.item-row-2 {
+  top: calc(16px + 2 * var(--mobile-item-size));
+}
+.item-col-2 {
+  left: calc(16px + 2 * var(--mobile-item-size));
+}
+.item-row-3 {
+  top: calc(24px + 3 * var(--mobile-item-size));
+}
+.item-col-3 {
+  left: calc(24px + 3 * var(--mobile-item-size));
+}
+
+/* desktop */
+@media screen and (min-width: 768px) {
+  .flex-grid * {
+    width: 100%;
+  }
+
+  .item {
+    font-size: 24px;
+    z-index: 2;
+    margin: auto;
+    width: var(--desktop-item-width);
+    max-width: var(--desktop-max-item-size);
+    min-height: 70px;
+    height: var(--desktop-item-height);
+    width: var(--desktop-item-width);
+  }
+
+  #board {
+    width: calc(24px + 4 * var(--desktop-item-width));
+    height: calc(24px + 4 * var(--desktop-item-height));
+  }
+
+  .flex-grid,
+  .flex-grid * {
+    gap: unset;
+  }
+
+  .item-row-1 {
+    top: calc(8px + var(--desktop-item-height));
+  }
+  .item-col-1 {
+    left: calc(8px + var(--desktop-item-width));
+  }
+  .item-row-2 {
+    top: calc(16px + 2 * var(--desktop-item-height));
+  }
+  .item-col-2 {
+    left: calc(16px + 2 * var(--desktop-item-width));
+  }
+  .item-row-3 {
+    top: calc(24px + 3 * var(--desktop-item-height));
+  }
+  .item-col-3 {
+    left: calc(24px + 3 * var(--desktop-item-width));
+  }
+
+  .flex-col {
+    height: 8vw;
+  }
+
+  .answer-banner {
+    width: calc(24px + 4 * var(--desktop-item-width));
+    font-size: 20px;
+    height: var(--desktop-item-height);
+    left: unset;
+    gap: unset;
+  }
+}
+
+.modal-content h2 {
+  font-size: 30px;
+  margin-block-start: 0.5em;
+  margin-block-end: 0;
+  font-weight: unset;
+  font-style: unset;
+}
+
+/* need !important to override shared styles */
+.modal-content button {
+  margin: 10px 0 0 0 !important;
+}
+
+#help-modal li {
+  font-weight: normal;
+}
+
+#help-modal .modal-content {
+  max-height: 95%;
+  align-items: flex-start;
+  text-align: left;
+  font-weight: normal;
+  border-radius: 10px 10px 0 0;
+}
+
+#congrats-modal .modal-content {
+  height: 100%;
+  justify-content: space-between;
+  overflow: scroll;
+}
+
+#congrats-modal .puzzle-results img {
+  width: 56px;
+}
+
+#inner-help {
+  overflow-y: auto;
+}
+
+#help-modal {
+  text-align: left;
+  width: auto;
+  font-weight: normal;
+}
+
+#help-modal h2 {
+  font-family: 'nyt-karnakcondensed';
+  font-size: 28px;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-transform: none;
+  text-align: left;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  display: block;
+}
+
+#help-modal ul {
+  margin-block-end: 0.7em;
+}
+
+#color-descriptions {
+  position: relative;
+}
+
+#help-arrow {
+  height: 2.2rem;
+  left: 2.6rem;
+  bottom: 1.4rem;
+  position: absolute;
+}
+
+#puzzleselect-modal {
+  position: absolute;
+  top: 0;
+  overflow-y: scroll;
+}
+
+#feedback > p {
+  text-align: left;
+  color: #000;
+  font-size: 16px;
+}
+
+.modal {
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.modal .modal-content {
+  width: 100%;
+  max-width: 520px;
+  padding: 32px;
+  animation: slideIn 200ms;
+}
+
+.modal-content.closing {
+  animation: slideOut 200ms;
+}
+
+.congrats-contents {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+#congrats-title {
+  font-size: 36px;
+  margin: 8px 0 8px 0;
+}
+
+#puzzle-title {
+  font-size: 20px;
+  font-family: 'NYT-Franklin';
+  font-weight: 500;
+}
+
+@media screen and (min-width: 520px) {
+  .modal {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #congrats-modal .modal-content {
+    overflow-y: auto;
+    height: auto;
+    max-height: 95%;
+  }
+
+  #help-modal {
+    margin: 15px 0 0 0;
+  }
+}
+
+/* phoenix vanilla js styles */
+
+.modal-subtitle {
+  font-weight: bold;
+}
+
+#help-modal ul {
+  margin-block-start: 0;
+  list-style: unset;
+}
+
+/* General Body */
+html {
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: magslab;
+  font-weight: normal;
+  font-size: 3rem;
+  margin: 0;
+  color: var(--main-game-color);
+}
+
+.modal .oblong-button {
+  background-color: var(--main-game-color);
+}
+
+.modal a {
+  border-bottom: 3px solid var(--main-game-color);
+}
+
+.modal button {
+  color: black;
+}
+
+.has-error {
+  animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.settings-icon:hover {
+  cursor: pointer;
+}
+
+#settings-modal .modal-content {
+  text-align: left;
+}
+
+#settings-modal h2 {
+  font-family: 'NYT-Franklin';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 1.26px;
+}
+
+.settings-container {
+  width: 100%;
+}
+
+.setting {
+  padding: 16px 16px 16px 0;
+  font-family: 'NYT-Franklin';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d3d6da;
+}
+
+.setting:last-child {
+  border-bottom: none;
+}
+
+.setting-text {
+  padding-right: 8px;
+}
+
+.setting-title {
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'NYT-Franklin';
+  line-height: 20px;
+}
+
+.setting-link {
+  color: #787c7e !important;
+  font: 16px 'NYT-Franklin';
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.setting-description {
+  font-size: 12px;
+  color: #5a5a5a;
+  font-family: 'NYT-Franklin';
+  line-height: 130%;
+  font-weight: 500;
+}
+
+.setting-toggle-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.setting-toggle-container:hover {
+  cursor: pointer;
+}
+
+.setting-toggle {
+  height: 20px;
+  width: 32px;
+  background: #878a8c;
+  border: none;
+  border-radius: 999px;
+  display: block;
+  position: relative;
+}
+
+.setting-toggle-knob {
+  display: block;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  height: calc(100% - 4px);
+  width: 50%;
+  border-radius: 8px;
+  background: #fff;
+  transform: translateX(0);
+  transition: transform 0.3s;
+}
+
+.setting-toggle.toggled {
+  background-color: #538d4e;
+}
+
+.setting-toggle-knob.toggled {
+  transform: translateX(calc(100% - 4px));
+}
+
+#loading-bar {
+    width: 150px;
+    height: 8px;
+    border-radius: 104px;
+    margin: 20px auto;
+    position: relative;
+    border: 1px solid #000;
+}
+
+#loading-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0;
+    display: block;
+    height: 7px;
+    border: 1px solid #000;
+    background-color: #000;
+    border-radius: 104px;
+    transition: width 10ms ease-in-out;
+    width: 30%;
+    right: 98%;
+}
+#error-cover {
+  background-color: var(--main-game-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 30;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#error-icon {
+  width: 75px;
+  margin: -6px;
+}
+
+#error-title {
+  height: 39px;
+  margin-top: -5px;
+  font: 36px 'nyt-karnakcondensed';
+  font-weight: 700;
+  color: black;
+}
+
+#error-subtitle {
+  width: 100%;
+  height: 26px;
+  font: 24px 'nyt-karnak';
+  margin: 10px 0;
+}
+
+#error-body {
+  margin: 0;
+  width: 296px;
+  font-family: 'NYT-Franklin';
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+#error-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 9px 0 9px 0;
+}
+
+#error-feedback-button {
+  width: 311px;
+  height: 48px;
+  border-radius: 24px;
+  background: #000;
+  color: white;
+  font-family: 'NYT-Franklin';
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#error-back-button {
+  width: 311px;
+  height: 48px;
+  border-radius: 24px;
+  background: white;
+  color: black;
+  font-family: 'NYT-Franklin';
+  font-size: 14px;
+  font-weight: 600;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+:root {
+  --yellow: #f9df6d;
+  --green: #a0c35a;
+  --blue: #b0c4ef;
+  --purple: #ba81c5;
+  --red: rgb(255, 103, 103);
+  --orange: #f8a765;
+  --main-game-color: #b4a8ff;
+  --selected-color: #5a594e;
+  --incorrect-color: rgb(90 89 78 / 75%);
+  --light-grey: rgb(212, 212, 212);
+  --grey: #e2e2e2;
+  --ui-grey: #7f7f7f;
+  --item-grey: #efefe6;
+  --top-section-desktop-height: 233.5px;
+  --top-section-mobile-height: 46px;
+  --contrast-yellow: #f9df6d;
+  --contrast-green: #a0c35a;
+  --contrast-blue: #b0c4ef;
+  --contrast-purple: #ba81c5;
+
+  --group-0-color: var(--yellow);
+  --group-1-color: var(--green);
+  --group-2-color: var(--blue);
+  --group-3-color: var(--purple);
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  font-family: 'NYT-Franklin';
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  --desktop-item-width: 150px;
+  --desktop-item-height: 80px;
+  --desktop-max-item-size: 200px;
+  --mobile-item-size: 22.5vw; /* rn mobile is size as opposed to height and width bc h&w same for mobile */
+  --mobile-max-item-size: 22.5vw;
+}
+
+.fullscreen.pz-newsreader,
+.fullscreen.pz-games-app {
+  height: 100vh;
+}
+
+.fullscreen.pz-games-app {
+  background-color: var(--main-game-color);
+}
+
+#mobile-indicator {
+  display: none;
+}
+
+#cover.hide,
+.hide,
+#tool-buttons.hide,
+#error-cover.hide {
+  display: none;
+}
+
+#edited-by {
+  font-size: 16px;
+  color: black;
+  font-family: 'NYT-Franklin';
+}
+
+#four-connect-icon {
+  width: 65px;
+  align-self: center;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - var(--top-section-mobile-height));
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#game-title {
+  margin-top: 8px;
+  font: 40px karnakCondensedBold;
+}
+
+#game-beta {
+  font-size: 16px;
+  font-family: 'NYT-Franklin';
+  font-weight: 700;
+  text-transform: uppercase;
+  height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-subtitle {
+  margin-top: 8px;
+  width: 200px;
+  align-self: center;
+  font: 20px karnakMedium;
+}
+
+@media screen and (min-width: 768px) {
+  #game-subtitle {
+    width: 100%;
+  }
+}
+
+#todays-date-title {
+  font: 18px 'NYT-Franklin';
+  font-weight: 700;
+  margin-top: 15px;
+  color: black;
+}
+
+#play-button {
+  border: unset;
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  background-color: #000;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  letter-spacing: 0.05em;
+  font: normal 16px 'NYT-Franklin';
+  font-weight: 600;
+}
+
+#concierge {
+  background-color: black;
+}
+
+#tool-buttons,
+#results-buttons {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 24px 0;
+}
+
+#results-buttons {
+  display: none;
+}
+
+#submit-button,
+#shuffle-button,
+#deselect-all-button,
+#share-button,
+#results-button {
+  font-family: 'NYT-Franklin';
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  width: fit-content;
+  min-width: 5.5em;
+  height: 3em;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0;
+  max-width: 80vw;
+  border-radius: 32px;
+  line-height: 1.5em;
+  cursor: pointer;
+  border: black solid 1px;
+}
+
+#submit-button {
+  background-color: black;
+  color: white;
+  border: unset;
+}
+
+#shuffle-button,
+#deselect-all-button,
+#share-button,
+#results-button {
+  background-color: white;
+  color: black;
+}
+
+#deselect-all-button {
+  width: 120px;
+}
+
+#results-button {
+  min-width: 7em;
+}
+
+#results-buttons.active {
+  display: flex;
+}
+
+#submit-button.touched,
+#shuffle-button.touched,
+#deselect-all-button.touched,
+#share-button.touched {
+  background-color: var(--grey);
+}
+
+#purple-text {
+  color: var(--purple);
+}
+
+#top-text {
+  display: flex;
+  flex-direction: column;
+  height: 3.5em;
+  justify-content: space-around;
+  padding: 6px;
+  align-items: center;
+  font-size: 18px;
+}
+
+#puzzle-buttons {
+  margin: auto;
+}
+
+#toast {
+  visibility: hidden;
+  font-family: 'NYT-Franklin';
+  position: fixed;
+  left: 50%;
+  transform: translateX(calc(-50% - 30px));
+  margin: 30px;
+  background-color: black;
+  color: white;
+  padding: 13px;
+  border: none;
+  border-radius: 4px;
+  opacity: 1;
+  font-size: 14px;
+  line-height: 16px;
+  z-index: 100;
+  text-align: center;
+}
+
+#toast.show {
+  visibility: visible;
+  animation: fadein 0.5s, fadeout 0.5s 2s forwards;
+}
+
+#play-button.show {
+  display: block;
+  animation: fadein 0.5s;
+}
+
+#play-button.hide {
+  display: none;
+}
+
+#loading-bar.show {
+  display: block;
+  animation: fadein 0.5s;
+}
+
+#loading-bar.hide {
+  display: none;
+}
+
+.modal {
+  height: unset;
+  z-index: 8;
+  justify-content: center;
+}
+
+.modal.obscure-behind {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.modal p {
+  line-height: 1.2em;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.modal-content ul {
+  margin: 0;
+}
+
+.modal-content h2 {
+  margin: 0;
+}
+
+.modal a {
+  color: var(--link-text-blue);
+  border-bottom: none;
+  text-decoration: none;
+}
+
+#mobile-indicator {
+  display: block;
+}
+
+#attempts-remaining-text {
+  margin-top: 24px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+#attempts-remaining-bubbles {
+  display: flex;
+  justify-content: space-evenly;
+  width: 118px;
+  align-items: center;
+}
+
+.bubble {
+  opacity: 100;
+  background-color: var(--selected-color);
+  width: 16px;
+  height: 16px;
+  border-radius: 9999px;
+}
+
+.bubble.lost {
+  opacity: 0;
+}
+
+#tool-buttons > span.inactive {
+  background-color: white;
+  border: var(--ui-grey) solid 1px;
+  color: var(--ui-grey);
+  pointer-events: none;
+}
+
+#text-label-attempts-remaining.inactive {
+  color: var(--ui-grey);
+}
+
+#countdown-container {
+  margin: 5px;
+  font-family: 'NYT-Franklin';
+}
+
+.countdown-label {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+#timer {
+  font-size: 36px;
+}
+
+#share-and-upnext {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  gap: 8px;
+}
+
+#share-button,
+#play-sb {
+  border-radius: 9999px;
+  display: flex;
+  font-family: 'NYT-Franklin';
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  height: 48px;
+  min-width: 162px;
+  max-width: 180px;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+#share-button {
+  color: white;
+  background-color: black;
+  /* border: 1px solid black; */
+}
+
+#play-sb,
+#play-sb a {
+  color: black;
+}
+
+#play-sb {
+  background-color: #f7da21;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+#share-and-upnext .icon-sb {
+  content: '';
+  margin-bottom: 2px;
+  margin-left: 4px;
+  background-size: 16px;
+  height: 16px;
+  width: 16px;
+  display: inline-flex;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+}
+
+.help-emojis {
+  display: flex;
+  flex-direction: column;
+}
+
+.help-emojis > div {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+}
+
+.help-emoji {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  border-radius: 2px;
+  margin-bottom: 1.5px;
+}
+
+.help-emoji.group-0 {
+  background-color: var(--group-0-color);
+}
+
+.help-emoji.group-1 {
+  background-color: var(--group-1-color);
+}
+
+.help-emoji.group-2 {
+  background-color: var(--group-2-color);
+}
+
+.help-emoji.group-3 {
+  background-color: var(--group-3-color);
+}
+
+/* desktop */
+@media screen and (min-width: 768px) and (min-height: 600px) {
+  #mobile-indicator {
+    display: none;
+  }
+
+  .modal {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* small phones like iPhone SE */
+@media screen and (max-width: 380px) {
+  #top-text {
+    height: 2.5em;
+    font-size: 16px;
+  }
+  .item {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  #tool-buttons {
+    margin: 16px 0;
+  }
+
+  #attempts-remaining-text {
+    margin-top: 12px;
+  }
+
+  #board {
+    width: calc(20px + 4 * var(--mobile-item-size));
+    height: calc(20px + 4 * var(--mobile-item-size));
+    margin: auto;
+  }
+}
+
+@keyframes slideDown{0%{transform:translateY(0%)}90%{transform:translateY(0%)}100%{transform:translateY(100%)}}@keyframes flyIn{0%{opacity:0}100%{opacity:1}}@keyframes flyOut{0%{opacity:1}100%{opacity:0}}@keyframes fadeIn{0%{opacity:0}15%{opacity:0}100%{opacity:1}}.flexContainer{display:flex;flex-direction:column;align-items:center;justify-content:center;flex-wrap:nowrap;width:100%}.expandToRow{composes:flexContainer}@media(min-width: 444px){.expandToRow{display:flex;flex-direction:row;align-items:center;justify-content:space-around;flex-wrap:nowrap}}@media(max-width: 991.98px){.mobileColumn{display:flex;flex-direction:column;align-items:center;justify-content:center;flex-wrap:nowrap}}.visually-hidden{clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}#logo-nav{display:none}.sequence-animation>*{opacity:100;transform:translateY(0)}.pz-moment__description{margin-top:8px;width:200px;align-self:center;font:20px "nyt-karnakcondensed"}@media screen and (min-width: 768px){.pz-moment__description{width:100%}}.pz-moment__info-date{color:#000;margin-top:15px;font-weight:700;font-size:18px}h1.pz-moment__title,.pz-moment__description{color:#000}.pz-game-toolbar:has(#portal-game-toolbar:empty){border:none}.answer-banner>p>span{font-family:"NYT-Franklin";font-weight:bold}.pz-nav{box-shadow:unset}.pz-nav-drawer{top:50px}.pz-intercept::after{background-size:200px}.top-sale-banner,.games-sale-banner{display:none !important}.pz-games-app.pz-games-sale-banner:not(.pz-sub) .pz-hybrid-back{top:0}
+:root{--ad-interstitial-bg-color: rgb(179, 167, 254)}.AdMoment-module_adInterstitial__lqVlA{z-index:100;background-color:var(--ad-interstitial-bg-color)}.AdMoment-module_adInterstitialSkipButton__WWTfv{background-color:var(--ad-interstitial-bg-color);padding-top:12px;padding-bottom:14px;color:#121212}
+@keyframes Error-module_slideDown__vCUym{0%{transform:translateY(0%)}90%{transform:translateY(0%)}100%{transform:translateY(100%)}}@keyframes Error-module_flyIn__dSmdj{0%{opacity:0}100%{opacity:1}}@keyframes Error-module_flyOut__qM2QK{0%{opacity:1}100%{opacity:0}}@keyframes Error-module_fadeIn__Q62_v{0%{opacity:0}15%{opacity:0}100%{opacity:1}}.Error-module_flexContainer__trW7J{display:flex;flex-direction:column;align-items:center;justify-content:center;flex-wrap:nowrap;width:100%}.Error-module_expandToRow__jvDSk{}@media(min-width: 444px){.Error-module_expandToRow__jvDSk{display:flex;flex-direction:row;align-items:center;justify-content:space-around;flex-wrap:nowrap}}@media(max-width: 991.98px){.Error-module_mobileColumn__jf0DW{display:flex;flex-direction:column;align-items:center;justify-content:center;flex-wrap:nowrap}}.Error-module_visually-hidden__UEDxV{clip:rect(0 0 0 0);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}.Error-module_container__Fx8Rp{display:flex;position:absolute;width:100%;height:100%;left:0;justify-content:center;animation:Error-module_SlideIn__f4pwT 100ms linear;z-index:var(--error-z-index)}.Error-module_errorContainer___3f4b{display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative;font-family:nyt-franklin,Arial}.Error-module_errorContent__fSOKJ{margin:12px 0;display:flex;gap:12px;flex-direction:column;justify-content:center;align-items:center;position:relative;font-family:nyt-franklin,Arial}.Error-module_errorTitle__ljcWi{font-family:nyt-karnakcondensed,Georgia;font-size:36px;font-weight:700;line-height:38px}.Error-module_errorSubtitle__m9sRl{font-family:nyt-karnak,Georgia;font-size:24px;font-weight:500;line-height:28px}.Error-module_errorText__sGk_G{font-family:nyt-franklin,Arial;font-size:14px;font-weight:600;line-height:20px}.Error-module_backButton__q290v{margin:9px 0;border-radius:24px;width:150px;height:48px;font:600 1em nyt-franklin,Arial;font-size:16px;line-height:20px;text-align:center;box-shadow:none;border:none;cursor:pointer;position:relative}.Error-module_backButton__q290v:focus::after{content:"";display:block;position:absolute;top:-4px;left:-4px;right:-4px;bottom:-4px;border:2px dotted #add8e6;border-radius:1.875em}.Error-module_defaultErrorIcon__WqNTT{background:url("./assets/error/default.svg") no-repeat center;background-size:contain;height:86px;width:86px}.Error-module_offlineErrorIcon__ZJKiw{background:url("./assets/error/offline.svg") no-repeat center;background-size:contain;height:57px;width:70px}@keyframes Error-module_SlideIn__f4pwT{0%{transform:translateY(30px);opacity:0}100%{transform:translateY(0px);opacity:1}}@keyframes Error-module_SlideOut__E5dhb{0%{transform:translateY(0px);opacity:1}90%{opacity:0}100%{opacity:0;transform:translateY(60px)}}
+
+/*# sourceMappingURL=connections.7b6c4613a7a15728552f.css.map*/
